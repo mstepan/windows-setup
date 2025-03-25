@@ -38,6 +38,7 @@ config.window_close_confirmation = 'NeverPrompt'
 config.initial_rows = 40
 config.initial_cols = 140
 
+
 -- makes my cursor blink 
 config.default_cursor_style = 'BlinkingBar'
 config.disable_default_key_bindings = true
@@ -46,6 +47,8 @@ config.disable_default_key_bindings = true
 config.keys = {
   { key = 'c', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
   { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard'},
+  { key = "t", mods = "CTRL", action = wezterm.action.SpawnTab "CurrentPaneDomain"},
+  { key = "q", mods = "CTRL", action = wezterm.action.CloseCurrentTab { confirm = false } },
 }
 
 -- There are mouse binding to mimc Windows Terminal and let you copy
@@ -82,7 +85,7 @@ config.foreground_text_hsb = {
 -- This is used to set an image as my background 
 -- config.background = {
 --     {
---         source = { File = {path = 'C:/Users/theone.gif', speed = 0.2}},
+--         source = { File = {path = 'C:/Users/maksym/.config/wezterm/background.gif', speed = 0.2}},
 --  opacity = 1,
 --  width = "100%",
 --  hsb = {brightness = 0.5},
